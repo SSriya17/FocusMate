@@ -1,31 +1,232 @@
-.app-container {
-  height: 100vh;
-  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Segoe UI', sans-serif;
+/* 
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+  }  
+
+.hero {
+  text-align: center;
 }
 
-.content-box {
-  background-color: white;
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-tagline {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.start-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.start-btn:hover {
+  background-color: #555;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
   padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.hero {
+  margin-top: 4rem;
   text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
 }
 
 button {
   margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #4a90e2;
+  background-color: #0070f3;
   color: white;
   border: none;
-  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
   font-size: 1rem;
+  border-radius: 8px;
   cursor: pointer;
+} */
+html {
+  scroll-behavior: smooth;
 }
 
-button:hover {
-  background-color: #357ab8;
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom, #f0f4ff, #ffffff);
+  color: #222;
+}
+
+section {
+  padding: 100px 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1e293b;
+  color: white;
+  z-index: 50;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Navigation links on the right */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #0077ff;
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+.hero h2 {
+  font-size: 1.7rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #b53535;
+}
+
+/* Features section */
+#features {
+  padding: 6rem 2rem;
+  background-color: #f1f5f9;
+  color: #1e293b;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+}
+
+#features h3 {
+  font-size: 2rem;
+  margin-bottom: 0.1rem;
+  font-weight: 500;
+}
+
+#features ul {
+  list-style-type: none;
+  padding: 0.1rem 1rem;
+}
+
+#features li {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+/* Footer */
+footer {
+  background-color: #1e293b;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.95rem;
+  font-family: 'Inter', sans-serif;
+  margin-top: 3rem;
+}
+footer a {
+  color: #90cdf4;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+/*Grt Started Button */
+button {
+  /* margin-top: 0.5rem; */
+  margin: 0.5rem auto;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  width: 100px; 
+  cursor: pointer;
+  text-align: center;
+  display: block; /* for auto margin to work */
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#about {
+  background-color: #ffffff;
+  color: #1e293b;
+  text-align: center;
+}
+
+#contact {
+  background-color: #f0f4ff;
+  color: #1e293b;
+  text-align: center;
+}
+
+
+.scroll-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  font-size: 1.5rem;
+  text-decoration: none;
 }
