@@ -1,3 +1,78 @@
+/* 
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #1a1a1a;
+  }  
+
+.hero {
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-tagline {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.start-btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.start-btn:hover {
+  background-color: #555;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.hero {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+}
+
+button {
+  margin-top: 1rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+} */
 html {
   scroll-behavior: smooth;
 }
@@ -104,14 +179,6 @@ footer {
   font-family: 'Inter', sans-serif;
   margin-top: 3rem;
 }
-footer a {
-  color: #90cdf4;
-  text-decoration: none;
-}
-footer a:hover {
-  text-decoration: underline;
-}
-
 
 /*Grt Started Button */
 button {
@@ -128,30 +195,62 @@ button {
   text-align: center;
   display: block; /* for auto margin to work */
 }
-
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1rem;
-}
-
-#about {
-  background-color: #ffffff;
-  color: #1e293b;
-  text-align: center;
-}
-
-#contact {
-  background-color: #f0f4ff;
-  color: #1e293b;
-  text-align: center;
-}
-
-
 .scroll-top {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
+  z-index: 1000;
+  cursor: pointer;
+
+  /* position: fixed;
+  bottom: 2rem;
+  right: 2rem;
   font-size: 1.5rem;
+  background-color: #0070f3;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 50%;
   text-decoration: none;
+  text-align: center; 
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  z-index: 1000; *
+  transition: background-color 0.3s ease; */
+}
+.scroll-icon {
+  width: 40px;
+  height: 40px;
+  fill: white;
+  transition: transform 0.3s ease;
+  /* width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  opacity: 1; */
+}
+
+.scroll-top:hover {
+  transform: scale(1.2);
+  /* background-color: #1e293b;
+  opacity: 1;
+  boarder-radius: 80% */
+}
+
+/*Timer stuff*/
+.timer-controls button {
+  margin: 0.5rem auto;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: block;
+  width: 120px;
+}
+
+.timer-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
