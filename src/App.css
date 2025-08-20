@@ -1,0 +1,206 @@
+:root {
+  --bg:#0b0d10; 
+  --muted:#9aa4b2; 
+  --text:#e8eef6; 
+  --accent:#3dd9c4;     /* teal for keys & highlights */
+  --accent-aux:#5aaeff; /* paired gradient color */
+  --card:#1f2633;
+}
+
+body {
+  margin:0;
+  background:linear-gradient(135deg,#0b0d10,#0f1220 45%,#0c1318);
+  color:var(--text);
+  font-family: Inter, system-ui, Arial, sans-serif;
+}
+
+/* Layout */
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.6rem;
+  gap: 2.4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Main column spacing to use the page nicely */
+.main-timer {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  row-gap: 1.2rem; /* vertical spread between blocks */
+  min-width: 520px;
+}
+
+.header {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 900;
+  letter-spacing: .2px;
+  white-space: nowrap;
+}
+
+/* Modes */
+.modes {
+  display:flex; gap:12px; flex-wrap:wrap;
+  justify-content:center;
+}
+.mode {
+  padding:10px 16px;
+  border-radius:12px;
+  background:#151a22;
+  color:var(--text);
+  border:1px solid rgba(255,255,255,.12);
+  font-weight:700; cursor:pointer;
+}
+.mode.active {
+  background:linear-gradient(135deg,var(--accent),var(--accent-aux));
+  color:#0b0d10; border:none;
+}
+
+/* Key / hint bar */
+.controls-hint {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--accent);
+  text-align: center;
+  background: #151a22;
+  padding: 8px 14px;
+  border-radius: 10px;
+  display: inline-block;
+  letter-spacing: 0.2px;
+}
+.controls-hint .sep { margin: 0 8px; opacity: .6; }
+
+/* Timer (thinner stroke; snug fit) */
+.timer {
+  position:relative;
+  width:290px; height:290px; /* slightly slimmer square */
+  margin: 4px auto 0;
+}
+.timer-card {
+  border-radius: 20px;
+  padding: 8px;
+  background: radial-gradient(120% 120% at 50% 0%, rgba(61,217,196,.12), rgba(0,0,0,0));
+  border: 1px solid rgba(255,255,255,.07);
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
+}
+.progress { transform:rotate(-90deg); width:100%; height:100% }
+.bg { fill:none; stroke:#2c2f39; stroke-width:7 } /* thinner */
+.fg { fill:none; stroke:var(--accent); stroke-width:7; transition:stroke-dashoffset 1s linear }
+.time { position:absolute; inset:0; display:grid; place-items:center; font-size:56px; font-weight:900 }
+
+/* Under-timer */
+.under-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Time adjuster */
+.time-adjuster {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+}
+.time-adjuster span { font-weight: 900; color: var(--accent); }
+.time-adjuster button {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.15);
+  background: #151a22; color: var(--text);
+  cursor: pointer; font-weight: 800; font-size: 1.2rem;
+}
+.time-adjuster button:hover { background: #232b38; }
+
+/* Start / Reset */
+.controls {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+.controls button {
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 800;
+  cursor: pointer;
+  font-size: 1.05rem;
+  min-width: 110px;
+  text-align: center;
+  transition: transform 0.15s ease;
+}
+.controls button:hover { transform: translateY(-2px); }
+.controls .primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-aux));
+  color: #0b0d10;
+}
+.controls button:not(.primary) { background: #2f3a4d; color: var(--text); }
+
+/* Tasks sidebar */
+.tasks-panel {
+  flex: 1;
+  background: var(--card);
+  border-radius:16px;
+  padding:16px;
+  box-shadow:0 10px 28px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,255,255,.08);
+  min-width: 320px;
+  max-width: 380px;
+  position: sticky;
+  top: 20px;
+}
+.tasks-header{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; margin-bottom: 12px;
+  padding-bottom: 10px; border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.tasks-header h2 { margin: 0; color: var(--accent); }
+.toggle-btn {
+  padding: 0.55rem .85rem;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 10px;
+  background: #3a4b63; color: white;
+  cursor: pointer; font-weight: 800;
+}
+
+/* Tasks */
+.task-input { display:flex; gap:8px; margin-bottom:10px }
+.task-input input { flex:1; padding:8px 10px; border-radius:8px; border:none; background:#0f1420; color:var(--text); }
+.task-input button { padding:8px 12px; border-radius:8px; border:none; cursor:pointer; font-weight:800; background:linear-gradient(135deg,var(--accent),var(--accent-aux)); color:#0b0d10; }
+
+.task-list { display:flex; flex-direction:column; gap:8px }
+.task-item {
+  display: flex; align-items: center; justify-content: space-between;
+  background: #2b3446; padding: 8px 10px; border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.06);
+}
+.task-text { display:flex; align-items:center; gap:10px; flex:1; min-width:0; }
+.task-text span {
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  transition: color .2s, text-decoration .2s, opacity .2s;
+}
+.task-text span.done { text-decoration: line-through; color: var(--muted); opacity: .95; }
+
+.del-btn {
+  background: none; border: none; color: #ff6b6b;
+  cursor: pointer; font-size: 1rem; padding: 4px 6px; line-height: 1;
+}
+.del-btn:hover { color: #ff8585; }
+
+/* Responsive */
+@media (max-width: 980px){
+  .app-container { gap: 1.4rem; }
+}
+@media (max-width: 900px){
+  .app-container { flex-direction: column; align-items: stretch; }
+  .main-timer { min-width: 0; }
+  .tasks-panel { position: static; max-width: 100%; }
+}

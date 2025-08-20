@@ -1,0 +1,2 @@
+#root { width: 100%; }
+button:focus { outline: 3px solid #5aaeff; outline-offset: 2px; }
