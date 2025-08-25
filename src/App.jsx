@@ -107,12 +107,7 @@ function App() {
         <div className="timer-container">
           <div className="timer">
             <svg className="progress" viewBox="0 0 100 100">
-              <circle
-                className="bg"
-                cx="50"
-                cy="50"
-                r="46"
-              />
+              <circle className="bg" cx="50" cy="50" r="46" />
               <circle
                 className="fg"
                 cx="50"
@@ -195,14 +190,20 @@ function App() {
               />
               <button onClick={addTask}>Add</button>
             </div>
+
+            {/* ✅ Task list with checkboxes + strike-through */}
             <div className="task-list">
               {tasks.map((task, idx) => (
-                <div
-                  key={idx}
-                  className={`task-item ${task.done ? "done" : ""}`}
-                >
-                  <span onClick={() => toggleTask(idx)}>{task.text}</span>
-                  <button onClick={() => deleteTask(idx)}>✕</button>
+                <div key={idx} className="task-item">
+                  <label className="task-text">
+                    <input
+                      type="checkbox"
+                      checked={task.done}
+                      onChange={() => toggleTask(idx)}
+                    />
+                    <span className={task.done ? "done" : ""}>{task.text}</span>
+                  </label>
+                  <button className="del-btn" onClick={() => deleteTask(idx)}>✕</button>
                 </div>
               ))}
             </div>

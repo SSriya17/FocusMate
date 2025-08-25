@@ -182,11 +182,19 @@ body {
   background: #2b3446; padding: 8px 10px; border-radius: 10px;
   border: 1px solid rgba(255,255,255,.06);
 }
-.task-text { display:flex; align-items:center; gap:10px; flex:1; min-width:0; }
-.task-text span {
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
-  transition: color .2s, text-decoration .2s, opacity .2s;
+.task-text {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
 }
+
+.task-text span.done {
+  text-decoration: line-through;
+  color: var(--muted);
+  opacity: 0.8;
+}
+
 .task-text span.done { text-decoration: line-through; color: var(--muted); opacity: .95; }
 
 .del-btn {
